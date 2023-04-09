@@ -42,11 +42,12 @@ jobs:
         else
           exit 1
         fi
-
-    - name: Create Release
-      uses: softprops/action-gh-release@v1
-      # if: startsWith(github.ref, 'refs/tags/')
+    
+    - name: Upload artifact
+      uses: actions/upload-artifact@v2
       with:
-        files: ./latex/output/resume.pdf
+        name: resume
+        path: ./latex/output/resume.pdf
+        debug: true
     
     
