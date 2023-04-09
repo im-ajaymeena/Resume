@@ -1,0 +1,31 @@
+name: Build Resume
+
+on:
+  push:
+    branches:
+      - develop
+    paths:
+      - 'latex/resume.tex'
+      - '.github/workflows/build_resume.yaml'
+
+  workflow_dispatch:
+
+jobs:
+  build-PDF:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v2
+
+    - uses: docker-practice/actions-setup-docker@master
+
+    - name: run-latex
+      run: |
+        docker-compose run latex
+    
+    - name: pwd
+      run: echo $(pwd)
+  
+    - uses: actions/upload-artifact@v3
+      with:
+        name: resume.pdf
+        path: latex/output/resume.pdf
