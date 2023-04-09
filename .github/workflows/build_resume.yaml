@@ -18,14 +18,34 @@ jobs:
 
     - uses: docker-practice/actions-setup-docker@master
 
-    - name: run-latex
-      run: |
-        docker-compose run latex
-    
     - name: pwd
       run: echo $(pwd)
+
+    - name: run-latex
+      continue-on-error: true
+      run: |
+        docker run --rm \
+        -v $(pwd)/latex:/app \
+        -v $(pwd)/latex/font/Calibri:/usr/share/fonts/Calibri \
+        -v $(pwd)/latex/font/fontspec:/usr/share/fonts/fontspec \
+        -v $(pwd)/latex/font/Arial:/usr/share/fonts/Arial \
+        blang/latex:ubuntu \
+        sh -c "latexmk -pdf -f -xelatex -interaction=nonstopmode -synctex=1 -file-line-error -outdir=/app/output /app/resume.tex"
+      
+    - name: check-pdf-build
+      run: |
+        echo $(ls -R)
+        FILE=latex/output/resume.pdf
+        if test -f "$FILE"; 
+        then
+            echo "resume build success"
+        else
+          exit 1
+        fi
   
     - uses: actions/upload-artifact@v3
       with:
         name: resume.pdf
         path: latex/output/resume.pdf
+    
+    
