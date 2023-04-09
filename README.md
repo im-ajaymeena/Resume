@@ -1,6 +1,6 @@
-# Find my resume here
+# Check my resume
 
-[Resume_AjayMeena.pdf](https://github.com/im-ajaymeena/Resume/releases/download/untagged-74012c21b772e7e0a121/Ajay_Meena_Resume.pdf)
+[AjayMeena_Resume.pdf](https://github.com/im-ajaymeena/Resume/releases/download/latest/AjayMeena_Resume.pdf)
 
 
 
