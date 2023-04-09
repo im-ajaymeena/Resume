@@ -1,4 +1,4 @@
-name: Build Resume
+name: Build and Release Resume
 
 on:
   push:
