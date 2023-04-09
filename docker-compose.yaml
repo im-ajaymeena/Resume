@@ -1,0 +1,15 @@
+version: '3'
+
+services:
+  latex:
+    image: blang/latex:ubuntu
+    user: "1000"
+    volumes:
+      - ./latex:/app
+      - ./latex/font/Calibri:/usr/share/fonts/Calibri
+      - ./latex/font/fontspec:/usr/share/fonts/fontspec
+      - ./latex/font/Arial:/usr/share/fonts/Arial
+      - /etc/passwd:/etc/passwd:ro
+      - /etc/group:/etc/group:ro
+    command: bash /app/monitor.sh
+    restart: always
