@@ -43,32 +43,10 @@ jobs:
           exit 1
         fi
 
-    # - name: Create Release
-    #   uses: softprops/action-gh-release@v1
-    #   if: startsWith(github.ref, 'refs/tags/')
-    #   with:
-    #     files: latex/output/resume.pdf
     - name: Create Release
-      id: create_release
-      uses: actions/create-release@v1
-      env:
-        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      uses: softprops/action-gh-release@v1
+      # if: startsWith(github.ref, 'refs/tags/')
       with:
-        tag_name: v1.0.0
-        release_name: Release v1.0.0
-        body: Release v1.0.0
-        draft: false
-        prerelease: false
-      
-    - name: Upload Release Asset
-      id: upload-release-asset 
-      uses: actions/upload-release-asset@v1
-      env:
-        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-      with:
-        upload_url: ${{ steps.create_release.outputs.upload_url }}
-        asset_path: ./latex/output/resume.pdf
-        asset_name: myresume.pdf
-        asset_content_type: application/pdf
+        files: ./latex/output/resume.pdf
     
     
