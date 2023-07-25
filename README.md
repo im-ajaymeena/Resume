@@ -2,9 +2,6 @@
 
 [AjayMeena_Resume.pdf](https://github.com/im-ajaymeena/Resume/releases/download/latest/AjayMeena_Resume.pdf)
 
-[AjayMeena_Resume.jpg](https://github.com/im-ajaymeena/Resume/releases/download/latest/AjayMeena_Resume.jpg)
-
-
 
 # CI/CD Resume with Docker
 
