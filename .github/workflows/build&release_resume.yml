@@ -50,6 +50,11 @@ jobs:
       with:
         keep_latest: 0
     
+
+    - name: Convert PDF to JPG
+      run: |
+          pdftoppm -jpeg ./latex/output/resume.pdf ./latex/output/resume.jpg
+    
     - name: Create Release
       id: create_release
       uses: actions/create-release@v1
@@ -61,7 +66,7 @@ jobs:
         draft: false
         prerelease: false
 
-    - name: Upload Release Asset
+    - name: Upload Release Asset (PDF)
       id: upload-release-asset 
       uses: actions/upload-release-asset@v1
       env:
@@ -71,5 +76,17 @@ jobs:
         asset_path: ./latex/output/resume.pdf
         asset_name: AjayMeena_Resume.pdf
         asset_content_type: pdf
+    
+
+    - name: Upload Release Asset (IMAGE)
+      id: upload-release-asset 
+      uses: actions/upload-release-asset@v1
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      with:
+        upload_url: ${{ steps.create_release.outputs.upload_url }} 
+        asset_path: ./latex/output/resume.jpg
+        asset_name: AjayMeena_Resume.jpg
+        asset_content_type: image/jpeg
   
   
