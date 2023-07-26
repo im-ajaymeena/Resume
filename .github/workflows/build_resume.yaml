@@ -43,11 +43,11 @@ jobs:
           exit 1
         fi
     
-    # - name: Upload artifact
-    #   uses: actions/upload-artifact@v2
-    #   with:
-    #     name: resume
-    #     path: ./latex/output/resume.pdf
-    #     retention-days: 30
+    - name: Upload artifact
+      uses: actions/upload-artifact@v2
+      with:
+        name: resume
+        path: ./latex/output/resume.pdf
+        retention-days: 30
     
     
