@@ -32,16 +32,16 @@ jobs:
         blang/latex:ubuntu \
         sh -c "latexmk -pdf -f -xelatex -interaction=nonstopmode -synctex=1 -file-line-error -outdir=/app/output /app/resume.tex"
       
-    # - name: check-pdf-build
-    #   run: |
-    #     echo $(ls -R)
-    #     FILE=latex/output/resume.pdf
-    #     if test -f "$FILE"; 
-    #     then
-    #         echo "resume build success"
-    #     else
-    #       exit 1
-    #     fi
+    - name: check-pdf-build
+      run: |
+        echo $(ls -R)
+        FILE=latex/output/resume.pdf
+        if test -f "$FILE"; 
+        then
+            echo "resume build success"
+        else
+          exit 1
+        fi
     
     # - name: Upload artifact
     #   uses: actions/upload-artifact@v2
