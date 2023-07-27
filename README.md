@@ -1,11 +1,3 @@
-# Check my resume
-
-[AjayMeena_Resume.pdf](https://github.com/im-ajaymeena/Resume/releases/download/latest/AjayMeena_Resume.pdf)
-
-[AjayMeena_Resume.jpg](https://github.com/im-ajaymeena/Resume/releases/download/latest/AjayMeena_Resume.jpg)
-
-
-
 # CI/CD Resume with Docker
 
 ### Running locally
@@ -23,3 +15,10 @@
 - `push` on main branch create release attached with pdf coresponding to latex tex file in main
 
 - `push` on develop branch create artifact of pdf coresponding to latex tex file in develop
+
+
+# Check my resume
+
+[AjayMeena_Resume.pdf](https://github.com/im-ajaymeena/Resume/releases/download/latest/AjayMeena_Resume.pdf)
+
+<img src="https://github.com/im-ajaymeena/Resume/releases/download/latest/AjayMeena_Resume.jpg" alt="AjayMeena_Resume" width="892" height="1278">
