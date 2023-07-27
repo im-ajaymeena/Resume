@@ -78,15 +78,15 @@ jobs:
         asset_content_type: pdf
     
 
-    # - name: Upload Release Asset (IMAGE)
-    #   id: upload-release-asset-img 
-    #   uses: actions/upload-release-asset@v1
-    #   env:
-    #     GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-    #   with:
-    #     upload_url: ${{ steps.create_release.outputs.upload_url }} 
-    #     asset_path: ./latex/output/resume.jpg
-    #     asset_name: AjayMeena_Resume.jpg
-    #     asset_content_type: image/jpeg
+    - name: Upload Release Asset (IMAGE)
+      id: upload-release-asset-img 
+      uses: actions/upload-release-asset@v1
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      with:
+        upload_url: ${{ steps.create_release.outputs.upload_url }} 
+        asset_path: ./latex/output/resume.jpg
+        asset_name: AjayMeena_Resume.jpg
+        asset_content_type: image/jpeg
   
   
