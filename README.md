@@ -21,4 +21,4 @@
 
 [AjayMeena_Resume.pdf](https://github.com/im-ajaymeena/Resume/releases/download/latest/AjayMeena_Resume.pdf)
 
-<img src="https://github.com/im-ajaymeena/Resume/releases/download/latest/AjayMeena_Resume.jpg" alt="AjayMeena_Resume" width="892" height="1278">
+<img src="https://github.com/im-ajaymeena/Resume/releases/download/latest/AjayMeena_Resume.jpg" alt="AjayMeena_Resume" width="773" height="1107">
