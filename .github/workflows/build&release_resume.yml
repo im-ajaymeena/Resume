@@ -29,6 +29,9 @@ jobs:
         -v $(pwd)/latex/font/Arial:/usr/share/fonts/Arial \
         blang/latex:ubuntu \
         sh -c "latexmk -pdf -f -xelatex -interaction=nonstopmode -synctex=1 -file-line-error -outdir=/app/output /app/resume.tex"
+    
+    - uses: satackey/action-docker-layer-caching@v0.0.11
+      continue-on-error: true
       
     - name: check-pdf-build
       run: |
@@ -87,7 +90,7 @@ jobs:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       with:
         upload_url: ${{ steps.create_release.outputs.upload_url }} 
-        asset_path: ./latex/output/resume-image-1.jpg
+        asset_path: ./latex/output/resume-1.jpg
         asset_name: AjayMeena_Resume.jpg
         asset_content_type: image/jpeg
   
