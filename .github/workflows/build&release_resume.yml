@@ -16,8 +16,6 @@ jobs:
     steps:
     - uses: actions/checkout@v2
 
-    - uses: docker-practice/actions-setup-docker@master
-
     - name: pwd
       run: echo $(pwd)
 
@@ -31,6 +29,9 @@ jobs:
         -v $(pwd)/latex/font/Arial:/usr/share/fonts/Arial \
         blang/latex:ubuntu \
         sh -c "latexmk -pdf -f -xelatex -interaction=nonstopmode -synctex=1 -file-line-error -outdir=/app/output /app/resume.tex"
+    
+    - uses: satackey/action-docker-layer-caching@v0.0.11
+      continue-on-error: true
       
     - name: check-pdf-build
       run: |
@@ -53,7 +54,11 @@ jobs:
 
     - name: Convert PDF to JPG
       run: |
-          pdftoppm -jpeg ./latex/output/resume.pdf ./latex/output/resume.jpg
+          sudo apt-get update
+          sudo apt-get install -y poppler-utils
+          pdftoppm -jpeg ./latex/output/resume.pdf ./latex/output/resume
+          ls ./latex/output/resume*
+          ls ./latex/output/*jpg
     
     - name: Create Release
       id: create_release
@@ -67,7 +72,7 @@ jobs:
         prerelease: false
 
     - name: Upload Release Asset (PDF)
-      id: upload-release-asset 
+      id: upload-release-asset-pdf 
       uses: actions/upload-release-asset@v1
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
@@ -79,13 +84,13 @@ jobs:
     
 
     - name: Upload Release Asset (IMAGE)
-      id: upload-release-asset 
+      id: upload-release-asset-img 
       uses: actions/upload-release-asset@v1
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       with:
         upload_url: ${{ steps.create_release.outputs.upload_url }} 
-        asset_path: ./latex/output/resume.jpg
+        asset_path: ./latex/output/resume-1.jpg
         asset_name: AjayMeena_Resume.jpg
         asset_content_type: image/jpeg
   

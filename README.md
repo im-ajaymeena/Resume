@@ -1,4 +1,4 @@
-# CI/CD Resume with Docker
+# Build Resume CI/CD with Docker and Latex
 
 ### Running locally
 - Steps to run
@@ -7,8 +7,8 @@
     cd Resume 
     docker compose up 
     ```
-- resume.tex file is being continuously monitored and any change in it triggers latexmk command <br />  to generate updated PDF. This is being done with ```latex\monitor.sh```
-
+- resume.tex file is being continuously monitored and any change in it triggers latexmk command <br />  to generate updated PDF. This is being done with ```latex/monitor.sh```
+- output resume would be at ```latex/output/resume.pdf```
 <br />
 
 ### Continuous Deployment
