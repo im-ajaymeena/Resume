@@ -44,7 +44,7 @@ jobs:
         fi
     
     - name: Upload artifact
-      uses: actions/upload-artifact
+      uses: actions/upload-artifact@v4
       with:
         name: resume
         path: ./latex/output/resume.pdf
