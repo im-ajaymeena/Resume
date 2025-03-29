@@ -16,7 +16,7 @@ jobs:
     steps:
     - uses: actions/checkout@v2
 
-    - uses: docker-practice/actions-setup-docker@master
+    - uses: docker/setup-docker-action@v4
 
     - name: pwd
       run: echo $(pwd)
@@ -44,7 +44,7 @@ jobs:
         fi
     
     - name: Upload artifact
-      uses: actions/upload-artifact@v2
+      uses: actions/upload-artifact@v4
       with:
         name: resume
         path: ./latex/output/resume.pdf
