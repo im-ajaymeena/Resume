@@ -16,7 +16,7 @@ jobs:
     steps:
     - uses: actions/checkout@v2
 
-    - uses: ocker/setup-docker-action@v4
+    - uses: docker/setup-docker-action@v4
 
     - name: pwd
       run: echo $(pwd)
