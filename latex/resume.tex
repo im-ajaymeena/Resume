@@ -6,7 +6,7 @@
 \usepackage{lmodern}
 \usepackage{titlesec}
 \usepackage{fullpage} 
-\usepackage[margin=0.6in]{geometry}
+\usepackage[margin=0.56in]{geometry}
 \usepackage{amssymb}
 \thispagestyle{empty}% for removing page index
 \usepackage{parskip}
@@ -40,7 +40,7 @@
 [\vspace{0pt}{\titlerule[1pt]}]%aftercode
 
 \newlength{\itemgap}
-\setlength{\itemgap}{0pt}
+\setlength{\itemgap}{0.7pt}
 
 \newlength{\itembefore}
 \setlength{\itembefore}{-7.5pt}
@@ -58,8 +58,8 @@
 
 % \titlespacing{command}{left spacing}{before spacing}{after spacing}[right]
 \titlespacing{\part}{0pt}{11pt}{-0.5pt}[0pt]
-\titlespacing{\section}{0pt}{1pt}{-2pt}[0pt]
-\titlespacing{\subsection}{0pt}{0pt}{-6.5pt}[0pt]
+\titlespacing{\section}{0pt}{1pt}{-1pt}[0pt]
+\titlespacing{\subsection}{0pt}{9pt}{-6.5pt}[0pt]
 
 
 \newcommand\scl{1.05}
@@ -81,8 +81,13 @@
 
 \begin{center}
 \begin{tabular}{@{}l@{}}
-\hspace{2}\fontsize{25}{60}\selectfont
-\firstletter{Ajay Meena}
+\fontsize{10}{12}\selectfont \textbf{Education}: IIT-Mumbai \\ [1.5pt]
+\small B.Tech, M.Tech; Electronics Eng. \\[1pt]
+\small GPA: 8.38/10 \\[1pt]
+\end{tabular}%
+\hfill
+\begin{tabular}{@{}c@{}}
+\fontsize{26}{24}\selectfont \firstletter{Ajay Meena}
 \end{tabular}%
 \hfill
 \begin{tabular}{@{}r@{}}
@@ -90,41 +95,71 @@
 \small\faLinkedinSquare \hspace{1pt}  \href{https://www.linkedin.com/in/meena-ajay/}{LinkedIn} \hspace{1pt}
 \small \faGithub \hspace{1pt} \href{https://github.com/im-ajaymeena}{GitHub} \hspace{1pt} \\
 \small \faPhone \hspace{1pt} +81-07085914373 \\[1.2pt]
+% \small \faPhone \hspace{1pt} +91-9407370453 \\[1.2pt]
 % \small \textbf{DOB}: 20 Dec, 1996 
 \end{tabular}%
 \end{center}
 
-\section{\scshape{Technical Skills}}
 
+% \section{\scshape{Education}}
+% \subsection{{\textbf{\scalebox{\scl}{Indian Institute of Technology Mumbai (IIT-Mumbai)}} }  \hfill\scalebox{0.9}{[Jul'15-Jul'20]}}
+% \begin{itemize}[topsep=\itembefore,itemsep=\itemgap,partopsep=0pt, parsep=0pt]
+% \item{B.Tech \& M.Tech in Electrical \& Electronics Eng. |  Master's Thesis in Person-Tracking | Secured CGPA of 8.38/10}
+% % \item{Semester Exchange Ko\c{c} University, Turkey | Secured SGPA of 9.5/10 | Erasmus scholarship worth 4,200 EURO}
+% \end{itemize}
+
+\section{\scshape{Technical Skills}}
 \begin{itemize}[topsep=\itembefore,itemsep=\itemgap,partopsep=0pt, parsep=0pt]
 \renewcommand{\labelitemi}{\raisebox{0.30ex}{\scalebox{0.4}{$\blacksquare$}}}
-\item \textit{Languages}/\textit{Frameworks}: Python, PyTorch, C++, Flask, Django, Golang, Terraform, SQL, VueJS, JavaScript, TypeScript, Tkinter, Bash, \LaTeX, ONNX, TensorRT, OpenCV
-\item \textit{Software}/\textit{Platforms}: Git, GitHub Actions, Docker, Google Cloud Platform, Kubernetes, DVC,  Grafana, MATLAB, Conda, Milvus, Cypress, Apache Spark
+\item {\textit{Languages}/\textit{Frameworks}}: Python, PyTorch, C++, Flask, LlamaIndex, LangSmith, Neo4j, Django, FastAPI, Golang, Terraform, Selenium, SQL, ONNX, TensorRT, OpenCV, VueJS, JavaScript, TypeScript,\LaTeX, Tkinter, Bash, Chart.js, PyQt5
+\item {\textit{Software}/\textit{Platforms}}: Google Cloud Platform, Git, Kubernetes, DVC, GitHub Actions, Docker, Grafana, Conda, Milvus, Cypress, Apache Spark, Celery, MATLAB, RabbitMQ
 \end{itemize}
 
-\section{\scshape Work Experience}
-\subsection{{\textbf{\scalebox{\scl}{\textbf{AI \& Software Engineer}}} | \href{https://www.nablas.com/}{NABLAS, Tokyo} }  \hfill\scalebox{0.9}{[Aug'22-Present]}}
+
+
+
+\section{\scshape Professional Experience}
+
+\subsection{{\textbf{\scalebox{\scl}{\textcolor{black!100}{GenAI Engineer | Freelance |}}}\href{https://www.mightybot.ai/}{\textbf{\textcolor{black!100}{MightyBot-AI, Palo Alto}}} }  \hfill\scalebox{0.9}{[]}}
 \begin{itemize}[topsep=\itembefore,itemsep=\itemgap,partopsep=0pt, parsep=0pt]
-  
-  
-  \item \textbf {Multi-Modal Search Engine for Large Knowledge Base}
-  \SubItem{Designed microservices-based system architecture | Development of APIs for Vector-Store, Cloud Integration, User \\ authentication, Database Monitoring | Surveyed OSS models for converting media information into latent feature space}
-    
-  \item \textbf {OCR for Japanese Text for Esoteric Fonts | AI Consulting}
-  \SubItem{Trained DBNet for text-localization with 82\% F-score \& SVTR Model for recognition with accuracy 91\% on synthetic-dataset}
-  \SubItem{Utilized OSS Grammar Checker for validation of extracted text | Client side frontend only Web App with ONNX.js}
-  
-  \item \textbf {Fake Image Classification | AI Consulting}
-  \SubItem{Collected Real and Generated Fake Data from diffusion models with synthesized prompts for training on Custom Domain}
+  \item \textbf {RAG-Powered Autopilot for Meetings and Workflow Automation}
+
+  \SubItem{Designed the Planner-Agent combining Tree-of-Thought \& Chain-of-Thought to ensure accurate DAG-based tools selection }
+  \SubItem{Designed mechanism to construct a Knowledge Graph from meeting transcripts in a structured format using LLMs \& NER}
+  \SubItem{Implemented a Text-to-Cypher engine for querying a Neo4j database within a Knowledge Graph-based RAG application}
+  \SubItem{Built a Natural Language Interface for LLM to interact with Google Drive APIs for tasks like file search, create, sharing}
+
+\end{itemize}
+
+\subsection{{\textbf{\scalebox{\scl}{\textcolor{black!100}{AI \& Software Engineer | }}}\href{https://www.nablas.com/}{\textbf{\textcolor{black!100}{NABLAS, Tokyo}}} }  \hfill\scalebox{0.9}{[Aug'22-Mar'25]}}
+\begin{itemize}[topsep=\itembefore,itemsep=\itemgap,partopsep=0pt, parsep=0pt]
+
+  \item \textbf {AI Generated text/Fake news detection | SaaS}
+  \SubItem{Designed and deployed facts checker agent twitter-bot with quantized Llama v2 LLM customized for Japanese domain}
+  \SubItem{Developed AI-generated text detector based on perplexity and other metrics, achieves accuracy of >90\% for GPT-4o}
+  \SubItem{Architected and developed frontend/backend for a SaaS platform, application has attracted over 15+ clients in one-year}
+
+  \item \textbf {Fake Image Classification}
+  \SubItem{Scraped Real Images and Generated Fake Data from generative-models with synthesized prompts (created with GPTs)}
   \SubItem{Analysed Artifacts in Frequency Domain of Generated Images from Different diffusion based Text-to-Image models }
   \SubItem{Trained Swin Transformer based model achieved 98\% accuracy| Grad-CAM/Shap Value for Interpretability of Predictions}
+  \SubItem{Utilized Multi-Modal LLM for discrepancy explainability with integrated Image Search APIs}
 
-  \item \textbf {iLect System: EdTech Web Platform}
-  \SubItem{Collaborating with a team of 4+ developers in Agile/Scrum methodology to design and implement new features}
-  \SubItem{Reduced database migration time from 5hrs to 20min by utilizing Cloud Run Job \& uinx socket connection to Cloud SQL}
-  \SubItem{Developing backend APIs with Django REST framework, frontend with VueJS, TypeScript, Vuex, OpenAPI}
-  \SubItem{Continuous deployment on GCP and testing frontend/backend services using GitHub Actions, and monitoring with Grafana}
-  \SubItem{Maintenance of Kubernetes HPC cluster with CPU/GPU (CUDA) servers running JupyterLab on GKE, using Terraform}
+  \item \textbf {EdTech Web Platform for AI researchers | SaaS}
+  \SubItem{Led a team of 4+ developers to deliver SaaS features with Django REST and VueJS, CI/CD with Github Actions \& GCP}
+  \SubItem{Reduced database migration time from 5hours to 20min using Cloud Run Job and Unix socket connections with Cloud SQL}
+  \SubItem{Managing Kubernetes HPC clusters on GKE with Terraform and Golang for operations, resource monitoring with Grafana}
+  \SubItem{Enhanced API test coverage (80\% → 90\%) and reduced cloud costs by 30\% through adaptive scaling of computing resources}
+
+  \item \textbf {Multi-Modal Search Engine for Large Knowledge Base}
+  \SubItem{Developed microservices-based architecture and APIs for indexing Vector-Database, retrieval, JWT based authentication}
+  \SubItem{Integrated datasources (Cloud/G-Drive, Notion) | Used OSS models for projecting media information to latent feature space}
+  \SubItem{Integrating RAG for interacting with retrieved media, using LlamaIndex and OSS LLMs optimized for Japanese corpus}
+
+  \item \textbf {OCR for Japanese Text in News Broadcasts | AI Consulting}
+  \SubItem{Trained DBNet for text-localization with 82\% F-score \& SVTR Model for recognition with accuracy 91\% on synthetic-dataset}
+  \SubItem{Utilized an OSS Grammar Checker for validation of extracted text | Sliced inference for improving small text detection}
+  \SubItem{Improved accuracy by utilizing temporal informations across frames. Benchmarked OSS methods PaddleOCR, Tesseract etc}
 
   \item \textbf {Japanese Traffic Sign Detection | AI Consulting}
   \SubItem{Utilized multi-modal vision-language model for object localization | Trained Few-shot classification on custom data}
@@ -136,17 +171,17 @@
   % \item \textbf {Deployed Deep Learning models as Web Applications}
   % \SubItem{Integrated inference APIs in Flask/Gradio with frontend in VueJS | Created CI/CD processes for deployment to GCP}
 
-  \item \textbf {No-Code ML Web Platform}
-  \SubItem{Integrated training/inference APIs with frontend | Used Celery, Redis for asynchronous task processing and task queue}
+  % \item \textbf {No-Code ML Web Platform}
+  % \SubItem{Integrated train/inference APIs with frontend | Improved system with Celery, Redis for GPU enabled background task}
 
 
-  \item \textbf {Physical Modelling for RUL estimation | AI Consulting }
-  \SubItem{Formed a dynamic model of a mechanical system consisting of gear, bearing, and shaft using second-order ODEs}
-  \SubItem{Formulated and solved the ODEs governing the motion of the system to obtain simulated vibration response using scipy}
+  % \item \textbf {\href{https://github.com/im-ajaymeena/Spur-Gear-Vibration-Modelling}{Physical Modelling for RUL estimation} | AI Consulting }
+  % \SubItem{Formed a dynamic model of a mechanical system consisting of gear, bearing, and shaft using second-order ODEs}
+  % \SubItem{Formulated and solved the ODEs governing the motion of the system to obtain simulated vibration response using scipy}
 \end{itemize}
 
 
-\subsection{{\textbf{\scalebox{\scl}{\textbf{Assistant Researcher}}} | \href{https://www.hitachi.com/rd/about/location/crl/index.html}{Hitachi R\&D Lab, Tokyo} }  \hfill\scalebox{0.9}{[Dec'20-July'22]}}
+\subsection{{\textbf{\scalebox{\scl}{\textcolor{black!100}{Assistant Researcher | }}}\href{https://www.hitachi.com/rd/about/location/crl/index.html}{\textcolor{black!100}{\textbf{Hitachi Data Science Lab, Tokyo}}} }  \hfill\scalebox{0.9}{[Dec'20-July'22]}}
 
 \begin{itemize}[topsep=\itembefore,itemsep=\itemgap,partopsep=0pt, parsep=0pt]
 
@@ -161,11 +196,11 @@
 \item \textbf {Aerial View Object Detection}
 \SubItem{Improved detection accuracy on small objects with sliced-inference technique for object-detection models (YOLOX etc.)}
 \SubItem{Optimized production-level model with TensoRT, ONNX and OpenVINO. Benchmarked memory, GFLOPs, accuracy, FPS}
-\SubItem{Impact: Our team won the contract for building the Tokyo Metropolitan govt. disaster monitoring system worth 77M¥}
+\SubItem{Impact: Team won the contract for Tokyo Metropolitan govt. disaster monitoring system worth 77M¥}
 
 \item \textbf {Task-aware Quality Estimation of Person image}
 \SubItem{Designed models and training strategies to measure the informativeness of person image in an unsupervised manner}
-\SubItem{Achieved 10x reduction in storage requirements for tracking algorithm by selectively storing informative person-images}
+\SubItem{Achieved 10x reduction in storage for tracking system by selectively storing the informative images of person}
 \end{itemize}
 
 
@@ -176,21 +211,15 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 % \section{\textsc{Industrial Experience}}
-\section{\scshape{Education And Internship}}
-\subsection{{\textbf{\scalebox{\scl}{Indian Institute of Technology Mumbai (IIT-Mumbai)}} | India }  \hfill\scalebox{0.9}{[Jul'15-Jul'20]}}
-\begin{itemize}[topsep=\itembefore,itemsep=\itemgap,partopsep=0pt, parsep=0pt]
-\item{B.Tech \& M.Tech in Electrical \& Electronics Eng. |  Master's Thesis in Person-Tracking | Secured CGPA of 8.38/10}
-\item{Semester Exchange Ko\c{c} University, Turkey | Secured SGPA of 9.5/10 | Received Erasmus scholarship  of 4,200 EURO}
-\end{itemize}
 
 % \vskip \endpar
 
-\subsection{{\textbf{\scalebox{\scl}{Automated test rig for Electric-Vehicle}} | Greendzine Technologies, Bangalore}  \hfill\scalebox{0.9}{[May'18-Jul'18]}}
-\begin{itemize}[topsep=\itembefore,itemsep=\itemgap,partopsep=0pt, parsep=0pt]
-\renewcommand{\labelitemi}{\raisebox{0.30ex}{\scalebox{0.4}{$\blacksquare$}}}
-\item Developed the design verification plan for finished goods and programmed control flow for vehicle subsystem-level testing
-\item Impact: Proposed design was accepted by the company CTO and director for manufacturing
-\end{itemize}
+% \subsection{{\textbf{\scalebox{\scl}{Automated test rig for Electric-Vehicle | }}\textbf{Greendzine Technologies, Bangalore}}  \hfill\scalebox{0.9}{[May'18-Jul'18]}}
+% \begin{itemize}[topsep=\itembefore,itemsep=\itemgap,partopsep=0pt, parsep=0pt]
+% \renewcommand{\labelitemi}{\raisebox{0.30ex}{\scalebox{0.4}{$\blacksquare$}}}
+% \item Developed the design verification plan for finished goods and programmed control flow for vehicle subsystem-level testing
+% \item Impact: Proposed design was approved by the company's CTO and director for manufacturing
+% \end{itemize}
 
 %########################################################################
 
@@ -233,18 +262,18 @@
 
 
 
-\section{\scshape{Other Relevant Projects}}
-\vspace{1}
+% \section{\scshape{Other Relevant Projects}}
+% \vspace{1}
 
 % ##################################################
-\begin{itemize}[topsep=\itembefore,itemsep=\itemgap,partopsep=0pt, parsep=0pt]
+% \begin{itemize}[topsep=\itembefore,itemsep=\itemgap,partopsep=0pt, parsep=0pt]
   
-  \item \textbf {Real-time Emotion Recognition using CNNs from raw speech segments}
-  \item \textbf {Voice Conversion using Conditional WaveNet by conditioning the output on spectrogram of target speaker identity}
-  \item \textbf {Linear Programming based modelling for parking facility of autonomous vehicles}
-  \item \textbf {Genetic Algorithm based magnetic characterization for estimation of hysteresis model parameters}
+%   \item \textbf {Real-time Emotion Recognition using CNNs from raw speech segments}
+%   \item \textbf {Voice Conversion with Conditional WaveNet by conditioning the output on target speaker identity spectrogram}
+%   % \item \textbf {Linear Programming based modelling for parking facility of autonomous vehicles}
+%   % \item \textbf {Genetic Algorithm based magnetic characterization for estimation of hysteresis model parameters}
   
-\end{itemize}
+% \end{itemize}
 
 % \subsection{\scalebox{\scl}{\textbf{Real-time Emotion Recognition using CNNs}} }
 % \begin{itemize}[topsep=\itembefore,itemsep=\itemgap,partopsep=0pt, parsep=0pt]
